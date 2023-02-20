@@ -1,5 +1,11 @@
 <script lang="ts" setup>
-//
+const items = ref([
+  { value: 1, text: "United States" },
+  { value: 2, text: "Canada" },
+  { value: 3, text: "Mexico" },
+  { value: 4, text: "Vietnam" }
+]);
+const selected = ref();
 </script>
 
 <template>
@@ -235,6 +241,11 @@
                     <option>Canada</option>
                     <option>Mexico</option>
                   </select>
+                  <Select
+                    v-model="selected"
+                    placeholder="Choose..."
+                    :items="items"
+                  />
                 </div>
 
                 <div class="col-span-6">
